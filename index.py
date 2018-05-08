@@ -102,6 +102,7 @@ if __name__ == "__main__":
                                 possible = len(seq) - k + 1
                             #get the kmers
                             counts = count_kmers(seq, k)
+                            #print(counts)
                             #get the observed kmers                            
                             observed = len(counts)
                             k_list.append(k);
