@@ -2,9 +2,9 @@
 
 import glob
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
+import matplotlib.pyplot as plt
+#import seaborn as sns
 import sys
 
 #function to count the kmers
@@ -52,7 +52,6 @@ def generate_kmers_graph(file_name, seq_name_list, possible_total_list, observed
                      alpha=opacity,
                      color='b',
                      label='Possible Kmers')
-
     rects2 = plt.bar(index + bar_width, observed_total_list, bar_width,
                      alpha=opacity,
                      color='g',
