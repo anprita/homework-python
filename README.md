@@ -16,7 +16,8 @@ I created "image" folder inside the "output" folder where we generate all graphs
 
 index.py:
 
-I created index.py as a script using one input variable which is a filename in fasta format. If the sequence in fasta format is contain other than 'ACTG', it will not generate the table and graph, the script is considered it as wrong format of sequence.
+I created index.py as a script using one input variable which is a filename in fasta format. 
+If the sequence in fasta format is contain other than 'ACTG', it will generate the table and graph, the script is considered it as wrong format of sequence.
 Example : python index.py sample.fasta
 
 test_index.py:
