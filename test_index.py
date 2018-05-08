@@ -7,14 +7,12 @@ import pytest
 #avoid repetition by loading data in advance 
 @pytest.fixture 
 
-def fastq():
-	#f = open('sample.fastq','r')
-	#fastq = f.readlines()
-	fastq = 'AGGATGAATGG'
-	return fastq
+def seq():	
+	seq = 'AGGATGAATGG'
+	return seq
 
 #test k = 2 produces 6 kmers 
-def test_count_kmers(fastq):
-	counts = count_kmers(fastq, 2)
+def test_count_kmers(seq):
+	counts = count_kmers(seq, 2)
 	assert len(counts) == 6 
 
