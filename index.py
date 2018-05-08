@@ -69,7 +69,7 @@ def generate_kmers_graph(file_name, seq_name_list, possible_total_list, observed
 #main function
 if __name__ == "__main__":
     #get a input variable as a file name
-    file_name=sys.argv[1]
+    file_name=sys.argv[1]    
     if file_name in glob.glob('*.fasta'):
         f = open(file_name,'r')
         seq = f.readlines()
@@ -126,5 +126,6 @@ if __name__ == "__main__":
                         linguistic_complexity_list.append(linguistic_complexity) 
         summary_linguistic_complexity = generate_complexity_graph(file_name, seq_name_list, linguistic_complexity_list)
         summary_kmers = generate_kmers_graph(file_name, seq_name_list, possible_total_list, observed_total_list)
+        print('succeed to generate files and graphs for ', seq_name_list) 
     else:
         print('file should be in fasta format')

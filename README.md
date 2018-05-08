@@ -18,10 +18,12 @@ index.py:
 
 I created index.py as a script using one input variable which is a filename in fasta format. If the sequence in fasta format is contain other than 'ACTG', it will not generate the table and graph, the script is considered it as wrong format of sequence.
 
+test_index.py:
+I created test_index.py as a testing script. 
 
-nd1.fasta:
+sample.fasta:
 
-I created nd1.fasta to simplify the testing of scripy
+I created sample.fasta to simplify the testing of scripy
 
 Type this to execute the script: python index.py sample.fasta
 
