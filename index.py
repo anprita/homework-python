@@ -29,6 +29,7 @@ def check_seq_format(seq):
 #function to export a table(kmers, observed, possible) in .csv format per each sequence name
 def generate_file(file_name, detail_data, seq_name):
     data = pd.DataFrame([[i[0], i[1], i[2]] for i in detail_data], columns=['k-mers', 'observed', 'possible'])
+    #print('data-frame',detail_data)
     data.to_csv('output/data/'+ file_name + '_' + seq_name+'.csv', index=False)
     #return data
 
@@ -100,11 +101,10 @@ if __name__ == "__main__":
                     possible_list = []
                     observed_list = []
                     for k in range(1,len(seq)+1):
-                        if k==1:
-                            #exception only for k=1, possible kmers always 4 (A,C,T,G)
-                            possible = 4                        
-                        #get the possible kmers
-                        possible = len(seq) - k + 1
+                        if 4**k < len(seq):
+                            possible = 4**k 
+                        else:
+                            possible = len(seq) - k + 1                         
                         #get the kmers
                         counts = count_kmers(seq, k)
                         #print(counts)
@@ -112,7 +112,7 @@ if __name__ == "__main__":
                         observed = len(counts)
                         k_list.append(k)
                         possible_list.append(possible)                          
-                        observed_list.append(observed)
+                        observed_list.append(observed)                        
                     #get the total possible kmers                        
                     possible_total = sum(possible_list)  
                     possible_list.append(possible_total)
@@ -124,7 +124,7 @@ if __name__ == "__main__":
                     k_list.append('Total'); 
                     #merge kmers-data per each sequence name
                     detail_data = list(zip(k_list, observed_list, possible_list))
-                    #print(detail_data)
+                    #print('list',detail_data)
                     #generate file per each sequence name                      
                     detail = generate_file(file_name, detail_data, seq_name)
                     #get the linguistic complexity
