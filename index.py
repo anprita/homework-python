@@ -101,6 +101,7 @@ if __name__ == "__main__":
                     possible_list = []
                     observed_list = []
                     for k in range(1,len(seq)+1):
+                        #check the possible kmers
                         if 4**k < len(seq):
                             possible = 4**k 
                         else:
